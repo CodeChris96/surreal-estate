@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../styles/navbar.css";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Link } from "react-router-dom";
 import quickmoveLogo from "../styles/images/quickmoveLogo.png";
+import loginIcon from "../styles/images/loginIconWhite.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,26 +50,31 @@ const Navbar = () => {
             className="quickmove-logo-small"
           />
         </div>
-        <div className="signin-color-block" />
-        <button
-          type="button"
-          className="close-menu"
-          onClick={toggleMenu}
-          onKeyDown={handleCloseKeyDown}
-        >
-          &times;
-        </button>
+        <div className="signin-color-block">
+          <img src={loginIcon} alt="Login Icon" className="loginIcon" />
+          <p>sign in</p>
+        </div>
         <li className="navbar-subheading">Buy</li>
-        <li className="navbar-links-item">View Properties</li>
-        <li className="navbar-links-item">Property Valuation</li>
-        <li className="navbar-links-item">Mortgages</li>
-        <span className="burger-menu-line burger-menu-line-3" />
+        <li className="navbar-links-item">
+          <Link to="/">View Properties</Link>
+        </li>
+        <li className="navbar-links-item">
+          <Link to="/property-valuation">Property Valuation</Link>
+        </li>
+        <li className="navbar-links-item">
+          <Link to="/mortgages">Mortgages</Link>
+        </li>
         <li className="navbar-subheading">Sell</li>
-        <li className="navbar-links-item">Sell a Property</li>
-        <span className="burger-menu-line burger-menu-line-3" />
+        <li className="navbar-links-item">
+          <Link to="/sell-properties">Sell a Property</Link>
+        </li>
         <li className="navbar-subheading">Rent</li>
-        <li className="navbar-links-item">Property to rent</li>
-        <li className="navbar-links-item">Student property to rent</li>
+        <li className="navbar-links-item">
+          <Link to="/property-to-rent">Property to rent</Link>
+        </li>
+        <li className="navbar-links-item">
+          <Link to="/student-property-to-rent">Student property to rent</Link>
+        </li>
       </ul>
     </div>
   );
