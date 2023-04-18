@@ -18,12 +18,6 @@ const Navbar = () => {
     }
   };
 
-  const handleCloseKeyDown = (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      toggleMenu();
-    }
-  };
-
   return (
     <div className="navbar-container">
       <div
